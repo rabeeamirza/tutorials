@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+@model website2.Models.users
+
+@{
+Layout = null;
+}
+
+
+
+@{
+    ViewBag.Title = "forgetpass";
+}
+
+<html>
+    <head>
+        <title> Reset Password</title>
+<h2>Have You Forgot Password? </h2>
+        </head>
+
+<body style="background-image:url(http://thumbs.dreamstime.com/z/several-lipsticks-make-up-982792.jpg);">
+   <section class="resetpass">
+<form method="post" action="~/Home/UpdateData">
+    <fieldset>
+    Enter you Username: 
+    <input type="text" name="username" />
+    Give Your Secret Question:
+  <select name="secretques">
+    <option value="1">your first pet name?</option>
+    <option value="2">your best friend's name?</option>
+    <option value="3">your dob?</option>
+    <option value="4">your fear? </option>
+  </select>
+
+    Give You Secret Answer:
+    <input type="text" name="secretans"/>
+
+
+    <input type="submit" value="Go" />
+        </fieldset>
+</form>
+        </section>
+    </b>
+</html>

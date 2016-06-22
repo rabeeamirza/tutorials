@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <script src="~/Script/jquery-2.1.4.min.js"> </script>
+    <script src="~/Script/jquery.flip.min.js"> </script>
+
+    <!-- <script type="text/javascript">
+
+        var image1 = new Image()
+        image1.src = "~/images/1.png"
+
+        var image2 = new Image()
+        image2.src = "~/images/2.png"
+
+        var image3 = new Image()
+        image3.src = "~/images/3.png"
+
+        </script> -->
+
+    <style>      
+        body{ margin:0 auto; text-align:center} 
+    </style>
+
+
+
+
+
+    <script type='text/javascript' src='~/Script/jquery.min.js'></script>
+    <script type='text/javascript' src='~/Script/dynamicpage.js'></script>
+
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+ <body>
+
+  <!-- <div class="slideshow">
+     <img src="~/images/3.png" name="slideshow" alt="slides">
+     </div>
+     <script type="text/javascript"> 
+         var numberimage = 1
+         functionmyslide()
+         {
+             document.images.slideshow.src = eval("image" + numberimage + ".src")
+             if (numberimage < 4)
+                 numberimage = numberimage + 1
+             else
+                 numberimage = 1
+             setTimeout("myslide", 4500)
+         }
+         myslide()
+
+     </script>
+     
+      -->
+
+     <div id="slideShowImages">
+    <img src="~/images/logo1.png" alt="Slide logo" />
+ <!--   <img src="~/images/1.png" alt="Slide 1" />
+    <img src="~/images/2.png" alt="Slide 2" />
+    <img src="~/images/3.png" alt="Slide 3" />  
+    <img src="~/images/4.png" alt="Slide 4" />
+    <img src="~/images/5.png" alt="Slide 5" />
+    <img src="~/images/6.png" alt="Slide 6" /> --> 
+
+  </div> 
+  <script src="~/Script/slideShow.js"></script>
+
+     
+		<link href="~/Content/style.css" rel="stylesheet" type="text/css"  media="all" />
+		<!---start-wrap---->
+			<!---start-header---->
+			<div class="header">
+				<div class="wrap">
+				<!---start-logo---->
+				<div class="logo">
+					<a href="~/Home/index"><img src="~/images/logo.png" title="logo" /></a>
+				</div>
+				<!---End-logo---->
+				<!---start-top-menu-search---->
+				<div class="top-menu">
+					<div class="top-nav">
+						<ul>
+							<li><a href="~/Home/aboutus">About Us </a></li>
+							<li><a href="~/Home/index1">Videos</a></li>
+							<li><a href="~/Home/categories">Categories</a></li>
+                            <li><a href="~/Home/contact"> Contact </a></li>
+                            @if(Session["username"] == null)
+                            {
+                            <li><a href="~/Home/loginform"> Signup </a></li>
+                            <li><a href="~/Home/login"> Login </a></li>
+                            }
+                            else
+                            {
+                            <li><a href="~/Home/login"> </a> @Session["username"]</li>
+                            <li><a href="~/Home/logout"> Logout  </a></li>
+                            }
+
+						</ul>
+					</div>
+					<div class="clear"> </div>
+				</div>
+				<div class="clear"> </div>
+				<!---End-top-menu-search---->
+			</div>
+			<!---End-header---->
+		</div>
+    @RenderBody()
+
+
+		<div class="copy-right">
+			<p>Design by <a href="https://www.facebook.com/rabeea.anwaarmirza">Rabeea Anwaar</a></p>
+		</div>
+		<!---End-copy-right---->
+
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
